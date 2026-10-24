@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChaosLab | Failure & Recovery Simulator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">DEVOPS LABORATORY</p>
+      <h1>Chaos<span>Lab</span></h1>
+      <p class="subtitle">Controlled Microservice Failure & Recovery Simulator</p>
+    </div>
+    <div class="live"><span></span> LOCAL SIMULATION</div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <h2>Experiment with failure. Understand recovery.</h2>
+        <p>Inject a controlled failure into a simulated service and observe its impact.</p>
+      </div>
+      <button class="recover" onclick="recoverAll()">↻ Recover all services</button>
+    </section>
+
+    <section class="stats">
+      <article><p>Total services</p><strong id="total">3</strong></article>
+      <article><p>Healthy</p><strong id="healthy">3</strong></article>
+      <article><p>Failed</p><strong id="failed">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><h2>Service topology</h2><p>Choose a service to simulate a failure.</p></div>
+        <span class="tag">SIMULATED ENVIRONMENT</span>
+      </div>
+      <div class="services" id="services">
+        {% for name, info in services.items() %}
+        <article class="service" id="card-{{ loop.index }}">
+          <div class="service-icon">{{ loop.index }}</div>
+          <h3>{{ name }}</h3>
+          <p>Depends on: {{ info.depends_on|join(', ') if info.depends_on else 'None' }}</p>
+          <span class="status healthy">{{ info.status }}</span>
+          <button onclick='injectFailure({{ name|tojson }})'>Inject failure</button>
+        </article>
+        {% endfor %}
+      </div>
+      <p class="notice">This is a local simulation. It does not stop real services.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><div><h2>Experiment history</h2><p>Recent actions and outcomes</p></div></div>
+      <div id="history"><p class="empty">No experiments yet. Try injecting a failure.</p></div>
+    </section>
+  </main>
+
+  <footer>ChaosLab · Educational DevOps project · Controlled local experiments</footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>
