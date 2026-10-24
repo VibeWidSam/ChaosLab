@@ -49,18 +49,22 @@ Project setup and DevOps documentation — 9b2c19f
 
 The initial website commit includes the dashboard and its service failure and recovery functionality. The later commits add automated testing, continuous integration, and project documentation.
 
-## Screenshots
-screenshots/01-homepage.png — Main dashboard with healthy services.
+## Screenshots and Evidence
 
-screenshots/02-failure.png — Dashboard after a simulated failure.
+### 1. Main Dashboard
+![Main dashboard with healthy services](screenshots/01-homepage.png)
 
-screenshots/03-recovery.png — Dashboard after service recovery.
+### 2. Failure Injection
+![Dashboard after a simulated failure](screenshots/02-failure.png)
 
-screenshots/04-git-history.png — Actual Git commit history.
+### 3. Service Recovery
+![Dashboard after service recovery](screenshots/03-recovery.png)
 
-screenshots/05-github-actions.png — Successful GitHub Actions workflow run.
+### 4. Git Commit History
+![Actual Git commit history](screenshots/04-git-history.png)
 
-Screenshots are captured from the actual project and repository.
+### 5. GitHub Actions CI Result
+![Successful GitHub Actions workflow](screenshots/05-github-actions.png)
 
 
 ## Scope and Limitations
