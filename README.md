@@ -37,19 +37,31 @@ Changes are developed incrementally and committed with meaningful messages. GitH
 The GitHub Actions workflow is in `.github/workflows/ci.yml`. It checks out the repository, sets up Python, installs dependencies and runs the test suite.
 
 ## Changes and Commit History
-Document each meaningful change below with its actual commit hash and a screenshot:
-1. Initial website and project setup
-2. Service topology and status display
-3. Failure injection and dependency impact
-4. Recovery and experiment history
-5. Automated tests
-6. GitHub Actions continuous integration
+The project was developed and documented through the following Git commits:
+
+Initial website and service topology — f592a97
+
+Automated tests for failure and recovery — 743a136
+
+GitHub Actions continuous integration — 9295879
+
+Project setup and DevOps documentation — 9b2c19f
+
+The initial website commit includes the dashboard and its service failure and recovery functionality. The later commits add automated testing, continuous integration, and project documentation.
 
 ## Screenshots
-Add your own screenshots to the `screenshots/` folder and embed them here after capturing them.
+screenshots/01-homepage.png — Main dashboard with healthy services.
 
-Example:
-`![ChaosLab homepage](screenshots/01-homepage.png)`
+screenshots/02-failure.png — Dashboard after a simulated failure.
+
+screenshots/03-recovery.png — Dashboard after service recovery.
+
+screenshots/04-git-history.png — Actual Git commit history.
+
+screenshots/05-github-actions.png — Successful GitHub Actions workflow run.
+
+Screenshots are captured from the actual project and repository.
+
 
 ## Scope and Limitations
 This is a local simulation. It does not stop or restart real production services. Recovery currently restores all simulated services to a healthy state.
