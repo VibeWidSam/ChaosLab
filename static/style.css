@@ -56,3 +56,29 @@ footer { text-align:center; font-size:12px; }
   .stats article { padding:12px; }
   .stats strong { font-size:22px; }
 }
+
+.message {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.message:empty {
+  display: none;
+}
+
+.message.success {
+  background: #e6f7ed;
+  color: #176b3a;
+}
+
+.message.error {
+  background: #fde8e8;
+  color: #a61b1b;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
